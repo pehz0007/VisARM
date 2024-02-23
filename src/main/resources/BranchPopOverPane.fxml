@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root minWidth="350.0" stylesheets="@visual/popover.css" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button id="close-button" fx:id="btnClose" mnemonicParsing="false" onAction="#btnCloseFired" text="Close">
+         <VBox.margin>
+            <Insets left="4.0" />
+         </VBox.margin>
+      </Button>
+      <Label id="pointer-info-normal" minWidth="272.0" stylesheets="@visual/popover.css" text="Branch information:">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="8.0" />
+         </VBox.margin>
+      </Label>
+      <VBox id="branch-info-background" minWidth="272.0" stylesheets="@visual/popover.css">
+         <children>
+            <HBox prefWidth="200.0">
+               <children>
+                  <Label id="branch-info-label" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Branch condition:" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label id="branch-info-value" fx:id="lblBranchCondition" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Not Equals" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="24.0" layoutY="24.0" prefWidth="200.0">
+               <children>
+                  <Label id="branch-info-label" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Source Address:" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label id="branch-info-value" fx:id="lblSourceAddr" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="0xFFFFFFFF" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="24.0" layoutY="110.0" prefWidth="200.0">
+               <children>
+                  <Label id="branch-info-label" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Destination Address:" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label id="branch-info-value" fx:id="lblDestAddr" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="0xFFFFFFFF" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="24.0" layoutY="138.0" prefWidth="200.0" />
+            <HBox layoutX="24.0" layoutY="153.0" prefWidth="200.0" />
+            <HBox id="pointer-info-index-hbox" fx:id="hbIndexing" disable="true" layoutX="24.0" layoutY="150.0" prefWidth="200.0" stylesheets="@visual/popover.css" />
+            <HBox layoutX="24.0" layoutY="86.0" prefWidth="200.0">
+               <children>
+                  <Label id="branch-info-label" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Destination Line:" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label id="branch-info-value" fx:id="lblDestLineNumber" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="1" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <Button id="scroll-button" fx:id="btnShowDest" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnShowDestFired" text="Show destination in editor">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="14.0" left="14.0" right="14.0" top="8.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="8.0" />
+         </VBox.margin>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+   </padding>
+</fx:root>

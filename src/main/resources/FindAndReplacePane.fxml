@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.collections.*?>
+<?import visual.*?>
+
+<fx:root id="find-replace-pane" alignment="TOP_RIGHT" stylesheets="@visual/interface.css" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <padding>
+      <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+   </padding>
+   <children>
+      <HBox fx:id="hboxTop" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308">
+         <children>
+            <Label prefWidth="100.0" text="Find:" HBox.hgrow="NEVER">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Label>
+            <StackPane HBox.hgrow="ALWAYS">
+               <children>
+                  <TextField id="find-search-term" fx:id="txtFind" maxWidth="1.7976931348623157E308" onAction="#txtFindChanged" HBox.hgrow="ALWAYS" StackPane.alignment="CENTER_LEFT">
+                     <HBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </HBox.margin>
+                     <StackPane.margin>
+                        <Insets bottom="4.0" left="4.0" top="4.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <Label id="find-result-status" fx:id="lblStatus" alignment="CENTER_RIGHT" text="Enter search term" StackPane.alignment="CENTER_RIGHT">
+                     <StackPane.margin>
+                        <Insets right="3.0" />
+                     </StackPane.margin>
+                     <padding>
+                        <Insets bottom="2.0" left="6.0" right="6.0" top="2.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </StackPane>
+            <CheckBox fx:id="checkMatchCase" mnemonicParsing="false" onAction="#checkMatchCaseFired" text="Match Case">
+               <HBox.margin>
+                  <Insets left="8.0" right="8.0" />
+               </HBox.margin>
+            </CheckBox>
+            <CheckBox fx:id="checkRegex" layoutX="235.0" layoutY="18.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#checkRegexFired" text="Regex" HBox.hgrow="NEVER">
+               <HBox.margin>
+                  <Insets left="8.0" right="8.0" />
+               </HBox.margin>
+            </CheckBox>
+            <Button fx:id="btnNext" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnNextFired" prefWidth="80.0" text="Next" HBox.hgrow="NEVER">
+               <HBox.margin>
+                  <Insets left="8.0" right="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnPrevious" layoutX="417.0" layoutY="14.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnPreviousFired" prefWidth="80.0" text="Previous" HBox.hgrow="NEVER">
+               <HBox.margin>
+                  <Insets right="8.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox fx:id="hboxMiddle" alignment="CENTER_LEFT" layoutX="18.0" layoutY="18.0" maxWidth="1.7976931348623157E308">
+         <children>
+            <Label prefWidth="100.0" text="Replace with:" HBox.hgrow="NEVER">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Label>
+            <TextField id="find-search-term" fx:id="txtReplace" maxWidth="1.7976931348623157E308" onAction="#txtReplaceChanged" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="4.0" left="4.0" top="4.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="btnReplace" layoutX="417.0" layoutY="14.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnReplaceFired" prefWidth="80.0" text="Replace" HBox.hgrow="NEVER">
+               <HBox.margin>
+                  <Insets left="8.0" right="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnReplaceAll" layoutX="567.0" layoutY="14.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnReplaceAllFired" prefWidth="80.0" text="All" HBox.hgrow="NEVER">
+               <HBox.margin>
+                  <Insets right="8.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox fx:id="hboxBottom" alignment="CENTER_LEFT" layoutX="14.0" layoutY="14.0" maxWidth="1.7976931348623157E308" />
+   </children>
+</fx:root>

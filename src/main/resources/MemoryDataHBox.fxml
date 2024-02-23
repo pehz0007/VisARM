@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root id="memory-data-hbox-normal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" stylesheets="@visual/popover.css" type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="lblWordAddress" alignment="CENTER" prefWidth="150.0" text="Word Address">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblByte3" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefWidth="75.0" text="Byte 3">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblByte2" alignment="CENTER" layoutX="95.0" layoutY="10.0" prefWidth="75.0" text="Byte 2">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblByte1" alignment="CENTER" layoutX="180.0" layoutY="10.0" prefWidth="75.0" text="Byte 1">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblByte0" alignment="CENTER" layoutX="171.0" layoutY="10.0" prefWidth="75.0" text="Byte 0">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblName" alignment="CENTER" layoutX="209.0" layoutY="10.0" prefWidth="150.0" text="Name">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </Label>
+   </children>
+</fx:root>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.collections.*?>
+<?import visual.*?>
+
+<fx:root id="anime-vbox" stylesheets="@visual/shift_pane.css" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+   <children>
+      <Button id="close-button" fx:id="btnClose" mnemonicParsing="false" onAction="#btnCloseFired" stylesheets="@visual/popover.css" text="Close" />
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <Label fx:id="lblSummary" maxWidth="715.0" text="Left shift by 12 bits. 12 MSBs are shifted out. Zeros are used to fill in the spaces on the right." wrapText="true" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets top="8.0" />
+               </HBox.margin></Label>
+            <Button id="anime-replay-button" fx:id="btnReplay" mnemonicParsing="false" onAction="#btnReplayFired" text="Replay Animation" HBox.hgrow="NEVER">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="8.0" />
+         </padding>
+      </HBox>
+      <HBox>
+         <children>
+            <Label layoutX="812.0" layoutY="10.0" maxWidth="45.0" minWidth="45.0" prefWidth="45.0" text="Bits:">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Label>
+            <Label maxWidth="1.7976931348623157E308" text="31" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Label>
+            <Label layoutX="55.0" layoutY="10.0" text="0" HBox.hgrow="NEVER">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="14.0" top="8.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <HBox>
+         <children>
+            <Label id="anime-carry-label" fx:id="lblCarry" text="0">
+               <padding>
+                  <Insets bottom="4.0" left="12.0" right="12.0" top="4.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets right="8.0" />
+               </HBox.margin>
+            </Label>
+            <StackPane id="anime-stackpane">
+               <children>
+                  <Rectangle fx:id="shiftRect" arcHeight="5.0" arcWidth="5.0" fill="#0c967a" height="32.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" StackPane.alignment="CENTER_RIGHT" />
+                  <Label id="anime-label" fx:id="shiftLabel" text="0 1 0 0 0 0 0 1 0 0 1 0 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 0 1 1 1 1">
+                     <padding>
+                        <Insets bottom="4.0" left="12.0" right="12.0" top="4.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </StackPane>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="360.0" HBox.hgrow="NEVER">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" text="Key:">
+                     <padding>
+                        <Insets bottom="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label id="anime-key-original" text="Original Bits">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label id="anime-key-new" fx:id="lblKeyNew" layoutX="10.0" layoutY="10.0" text="New Bits">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label id="anime-key-carry" layoutX="141.0" layoutY="19.0" text="Carry Bit After">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="41.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" text="Original Value:">
+                     <padding>
+                        <Insets bottom="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label id="original-value" fx:id="lblOriginalValue" layoutX="246.0" layoutY="18.0" text="0xABC">
+                     <padding>
+                        <Insets bottom="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="290.0" layoutY="18.0" text="New Value:">
+                     <padding>
+                        <Insets bottom="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label id="new-value" fx:id="lblNewValue" layoutX="196.0" layoutY="18.0" text="0x1CD">
+                     <padding>
+                        <Insets bottom="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </HBox>
+         </children>
+      </HBox>
+   </children>
+</fx:root>

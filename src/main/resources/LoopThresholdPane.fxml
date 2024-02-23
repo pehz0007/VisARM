@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.collections.*?>
+<?import visual.*?>
+
+<fx:root id="root" stylesheets="@visual/alert.css" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+   <children>
+      <HBox id="top-banner" alignment="CENTER_LEFT">
+         <children>
+            <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+               </HBox.margin>
+               <image>
+                  <Image url="@/images/dialog_alert.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER_LEFT">
+               <children>
+                  <Label id="top-banner-text" text="Warning">
+                     <padding>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </padding>
+                  </Label>
+                  <Label id="top-banner-subtitle" layoutX="10.0" layoutY="10.0" text="Possible infinite loop detected">
+                     <padding>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets left="-8.0" right="-8.0" top="-8.0" />
+         </VBox.margin>
+      </HBox>
+      <Label fx:id="lblDetails" maxWidth="500.0" text="The instruction at line 999 has been branched to 999 times. This may indicate unwanted behaviour, such as an infinite loop." wrapText="true">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </Label>
+      <HBox id="code-hbox">
+         <children>
+            <Label text="Branch destination:" HBox.hgrow="NEVER">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Label>
+            <Label id="code" fx:id="lblDestCode" maxWidth="1.7976931348623157E308" text="loop SUB, R0, R0, #1" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Label>
+            <Button fx:id="btnGoToDest" mnemonicParsing="false" onAction="#btnGoToDestFired" text="Show in Editor" HBox.hgrow="NEVER">
+               <HBox.margin>
+                  <Insets bottom="4.0" left="4.0" right="8.0" top="4.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets left="-8.0" right="-8.0" />
+         </VBox.margin>
+         <padding>
+            <Insets left="8.0" right="8.0" />
+         </padding>
+      </HBox>
+      <HBox id="code-hbox" layoutX="18.0" layoutY="66.0">
+         <children>
+            <Label prefHeight="32.0" prefWidth="130.0" text="Branch source:" HBox.hgrow="NEVER">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Label>
+            <Label id="code" fx:id="lblSourceCode" maxWidth="1.7976931348623157E308" text="B loop" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Label>
+            <Button fx:id="btnGoToSource" mnemonicParsing="false" onAction="#btnGoToSourceFired" text="Show in Editor" HBox.hgrow="NEVER">
+               <HBox.margin>
+                  <Insets bottom="4.0" left="4.0" right="8.0" top="4.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets left="-8.0" right="-8.0" />
+         </VBox.margin>
+         <padding>
+            <Insets left="8.0" right="8.0" />
+         </padding>
+      </HBox>
+      <CheckBox fx:id="checkDoNotWarn" mnemonicParsing="false" onAction="#checkDoNotWarnFired" text="Do not warn me again for this loop until I press &quot;Reset&quot;">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </CheckBox>
+      <HBox>
+         <children>
+            <Button fx:id="btnIgnore" cancelButton="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnIgnoreFired" text="Ignore and Continue" HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnChangeThreshold" layoutX="18.0" layoutY="18.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnChangeThresholdFired" text="Change Threshold" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnAbort" defaultButton="true" layoutX="165.0" layoutY="18.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnAbortFired" text="Abort Execution" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="8.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </HBox>
+   </children>
+</fx:root>

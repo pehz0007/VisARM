@@ -1,0 +1,28 @@
+#root {
+	-fx-background-color: #f4f4f4;
+}
+
+#top-banner {
+	-fx-background-color: #D14646;
+}
+
+#top-banner-text {
+	-fx-text-fill: #ffffff;
+	-fx-font-size: 24;
+}
+
+#top-banner-subtitle {
+	-fx-text-fill: #ffffff;
+	-fx-font-size: 16;
+}
+
+#code {
+	-fx-font-family: Monospaced;
+}
+
+#code-hbox {
+}
+
+#code-hbox:hover {
+	-fx-background-color: #cee1eb;
+}

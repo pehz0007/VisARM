@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.collections.*?>
+<?import visual.*?>
+
+<fx:root id="regpane-vbox" stylesheets="@visual/tableview-dark.css" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label id="regpane-label" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="439.0" text="Click on a line number to restore program to state at that line number." wrapText="true" VBox.vgrow="NEVER">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" />
+         </padding></Label>
+      <HBox VBox.vgrow="ALWAYS">
+         <children>
+            <TableView id="regpane-table" fx:id="historyTable" layoutX="120.0" layoutY="-5.0" onMouseClicked="#onMouseClick" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn prefWidth="110.0" text="Line Number">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="lineNumber" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="330.0" resizable="false" text="Value">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dispValue" />
+                    </cellValueFactory>
+                </TableColumn>
+              </columns>
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                </FXCollections>
+              </items>
+            </TableView>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+</fx:root>

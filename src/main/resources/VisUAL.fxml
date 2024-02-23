@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.input.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root prefHeight="650.0" prefWidth="1024.0" stylesheets="@visual/interface.css" type="javafx.scene.layout.VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar fx:id="menuBar">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#btnNewFileFired" text="New">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                     </accelerator></MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#btnOpenFileFired" text="Open">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                     </accelerator></MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#btnSaveFileFired" text="Save">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                     </accelerator></MenuItem>
+                  <MenuItem fx:id="menuSaveAs" mnemonicParsing="false" onAction="#btnSaveAsFired" text="Save As">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="UP" meta="UP" shift="DOWN" shortcut="DOWN" />
+                     </accelerator></MenuItem>
+              <MenuItem mnemonicParsing="false" onAction="#menuQuitFired" text="Quit">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                     </accelerator></MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#menuKeyShortFired" text="Keyboard shortcuts" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuSupInstFired" text="Supported instructions" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuLogGuideFired" text="Logging guide" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuMemMapFired" text="Memory map" />
+              <MenuItem mnemonicParsing="false" onAction="#menuAboutFired" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <VBox id="toolbar" fx:id="vboxToolbar" alignment="CENTER">
+         <children>
+            <HBox id="toolbar" fx:id="hboxToolbar" alignment="CENTER">
+               <children>
+                  <HBox fx:id="hboxUtilityButtons" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button id="toolbar-button" fx:id="btnNewFile" layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnNewFileFired" text="New" HBox.hgrow="NEVER">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button id="toolbar-button" fx:id="btnOpenFile" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnOpenFileFired" text="Open" HBox.hgrow="NEVER">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button id="toolbar-button" fx:id="btnSaveFile" layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnSaveFileFired" text="Save" HBox.hgrow="NEVER">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button id="toolbar-button" fx:id="btnSettings" layoutX="105.0" layoutY="20.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnSettingsFired" text="Settings" HBox.hgrow="NEVER">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <MenuButton id="toolbar-menu-button" fx:id="btnTools" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Tools" textAlignment="CENTER" HBox.hgrow="NEVER">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#btnAutoIndentFired" text="Auto-indent code">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="DOWN" code="I" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                                 </accelerator>
+                              </MenuItem>
+                            <MenuItem mnemonicParsing="false" onAction="#btnShowMemoryFired" text="View memory contents">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="DOWN" code="C" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                                 </accelerator>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false" onAction="#btnShowSymbolFired" text="View symbols">
+                                 <accelerator>
+                                    <KeyCodeCombination alt="DOWN" code="Y" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                                 </accelerator>
+                              </MenuItem>
+                          </items>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </MenuButton>
+                        <Button id="toolbar-button" fx:id="btnChangeLayout" mnemonicParsing="false" onAction="#btnChangeLayoutFired">
+                           <graphic>
+                               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                   <Image url="@images/change_layout.png"/>
+                               </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox id="statusbox-off" fx:id="hboxStatus" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" onMouseClicked="#statusBarClicked" prefWidth="250.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView fx:id="imgStatusIcon" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+                           <HBox.margin>
+                              <Insets left="4.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label id="statusbox-text-off" fx:id="lblStatus" maxWidth="1.7976931348623157E308" text="Emulator Off" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="8.0" right="2.0" />
+                           </HBox.margin>
+                        </Label>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <Label id="statusbox-text-off" fx:id="lblLineCaption" text="Line">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label id="statusbox-text-off" fx:id="lblLineNumber" layoutX="10.0" layoutY="10.0" text="--">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="2.0" right="4.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="178.0" layoutY="18.0">
+                           <children>
+                              <Label id="statusbox-text-off" fx:id="lblIssuesCaption" text="Issues">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label id="statusbox-text-off" fx:id="lblIssuesCount" layoutX="10.0" layoutY="10.0" text="0">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="2.0" right="4.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="hboxEmulationButtons" alignment="CENTER_RIGHT" spacing="10.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button id="toolbar-button" fx:id="btnExecuteAll" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#executeAllFired" text="Execute" HBox.hgrow="NEVER" />
+                        <Button id="toolbar-button" fx:id="btnResetAll" alignment="CENTER" layoutX="76.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#resetAllFired" text="Reset" HBox.hgrow="NEVER" />
+                        <Button id="toolbar-button" fx:id="btnStepBackwards" alignment="CENTER" disable="true" layoutX="123.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#stepBackwardFired" text="Step Backwards" HBox.hgrow="NEVER" />
+                        <Button id="forwards-button" fx:id="btnStepForwards" alignment="CENTER" layoutX="176.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#stepForwardFired" text="Step Forwards" HBox.hgrow="NEVER" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <SplitPane id="splitpane" fx:id="splitPane" dividerPositions="0.62" VBox.vgrow="ALWAYS">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox id="hbox-editor-padding" fx:id="hboxEditorPadding" alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0" VBox.vgrow="NEVER">
+                           <children>
+                              <Label id="editor-status" fx:id="lblEditorStatus" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Reset to continue editing code" HBox.hgrow="ALWAYS">
+                                 <padding>
+                                    <Insets bottom="4.0" left="8.0" right="8.0" top="4.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="2.0" left="6.0" right="6.0" top="2.0" />
+                           </padding></HBox>
+                        <StackPane id="textarea-dark" fx:id="codeStackPane" layoutX="14.0" layoutY="14.0" minHeight="0.0" minWidth="0.0" prefHeight="725.0" prefWidth="606.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane id="infoPane" maxWidth="495.0" minWidth="495.0" prefWidth="495.0" SplitPane.resizableWithParent="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ScrollPane id="infoScrollPane" hbarPolicy="NEVER" maxWidth="495.0" minWidth="495.0" prefWidth="495.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" VBox.vgrow="ALWAYS">
+                           <padding>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </ScrollPane>
+                        <AnchorPane fx:id="bottomInfoPane" maxHeight="72.0" minHeight="72.0" prefHeight="72.0" VBox.vgrow="NEVER" />
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</fx:root>

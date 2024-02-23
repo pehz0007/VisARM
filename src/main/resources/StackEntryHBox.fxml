@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root id="stack-entry-hbox" alignment="CENTER_LEFT" maxWidth="294.0" prefWidth="294.0" stylesheets="@visual/popover.css" type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="lblAddress" alignment="CENTER" prefWidth="120.0" text="0xACCE55ED">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblRegister" alignment="CENTER" layoutX="60.0" layoutY="19.0" prefWidth="50.0" text="R0">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblValue" alignment="CENTER" layoutX="158.0" layoutY="19.0" prefWidth="120.0" text="0x0000DA7A">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </Label>
+   </children>
+</fx:root>

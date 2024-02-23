@@ -1,0 +1,19 @@
+.accordion > .titled-pane > .title {
+    -fx-padding: 8 0 0 -14;
+    -fx-background-color: transparent;
+	-fx-background-insets: 0;
+}
+
+.accordion > .titled-pane {
+	-fx-background-color: transparent;
+	-fx-padding: -2 0 0 -2;
+}
+
+#background {
+	-fx-background-radius: 4;
+	-fx-padding: 0 0 0 0;
+}
+
+#pane-table {
+	-fx-background-radius: 0;
+}

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root stylesheets="@visual/popover.css" type="HBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox maxWidth="1.7976931348623157E308" minWidth="300.0" stylesheets="@visual/popover.css">
+         <children>
+            <Button id="close-button" fx:id="btnClose" mnemonicParsing="false" onAction="#btnCloseFired" text="Close">
+               <VBox.margin>
+                  <Insets bottom="14.0" />
+               </VBox.margin>
+            </Button>
+            <VBox id="stack-info-background" minWidth="272.0" stylesheets="@visual/popover.css" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox prefWidth="200.0">
+                     <children>
+                        <Label id="stack-info-label" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Pointer Name: " HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </Label>
+                        <Label id="stack-info-value" fx:id="lblPtrName" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="R15" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="24.0" layoutY="24.0" prefWidth="200.0">
+                     <children>
+                        <Label id="stack-info-label" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Base Address:" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </Label>
+                        <Label id="stack-info-value" fx:id="lblBaseAdr" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="0xFFFFFFF" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="24.0" layoutY="138.0" prefWidth="200.0">
+                     <children>
+                        <Label id="stack-info-label" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Access mode:" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </Label>
+                        <Label id="stack-info-label" fx:id="lblAccessMode" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Store" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="24.0" layoutY="110.0" prefWidth="200.0">
+                     <children>
+                        <Label id="stack-info-label" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Stack type:" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </Label>
+                        <Label id="stack-info-label" fx:id="lblStackType" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Full Descending" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="24.0" layoutY="86.0">
+                     <children>
+                        <Label id="stack-info-label" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Behaviour:" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </Label>
+                        <Label id="stack-info-label" fx:id="lblBehaviour" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Decrement Before Store" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" layoutX="24.0" layoutY="154.0" prefWidth="154.0">
+                     <children>
+                        <Label id="stack-info-summary" fx:id="lblSummary" alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="255.0" stylesheets="@visual/popover.css" text="Registers are stored in ascending order. The lowest numbered register is stored in the lowest address in memory. Then, the base address is incremented." textAlignment="RIGHT" wrapText="true" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="16.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="24.0" layoutY="153.0" prefWidth="200.0" />
+                  <HBox id="stack-info-writeback-hbox" fx:id="hboxWriteback" disable="true" layoutX="24.0" layoutY="150.0" prefWidth="200.0" stylesheets="@visual/popover.css">
+                     <children>
+                        <Label id="stack-info-writeback-label" fx:id="lblWriteback" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Write-back disabled" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="14.0" left="14.0" right="14.0" top="8.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="8.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+         </padding>
+      </VBox>
+      <VBox fx:id="vboxContents">
+         <children>
+            <HBox id="stack-info-normal">
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Address" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" text="Register">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="95.0" layoutY="10.0" maxWidth="1.7976931348623157E308" text="Value" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets right="14.0" />
+               </padding>
+            </HBox>
+            <ScrollPane hbarPolicy="NEVER" minWidth="308.0" prefHeight="152.0" prefWidth="308.0" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+              <content>
+                <AnchorPane maxWidth="290.0" prefWidth="290.0">
+                     <children>
+                        <VBox fx:id="vboxEntryPane" prefHeight="0.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children></AnchorPane>
+              </content>
+            </ScrollPane>
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <Label text="Key:">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label id="memory-key-base" text="Pointer Before">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label id="memory-key-actual" layoutX="235.0" layoutY="26.0" text="Pointer After">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+         </padding></VBox>
+   </children>
+</fx:root>

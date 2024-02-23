@@ -1,0 +1,84 @@
+#anime-vbox {
+    -fx-background-color: transparent;
+}
+
+#anime-label {
+    -fx-background-color: transparent;
+    -fx-font-family: Monospaced;
+    -fx-font-size: 20;
+    -fx-text-fill: white;
+}
+
+#anime-carry-label {
+    -fx-background-color: #1E8CBA;
+    -fx-font-family: Monospaced;
+    -fx-font-size: 20;
+    -fx-text-fill: white;
+    -fx-background-radius: 4 4 4 4;
+}
+
+#anime-stackpane {
+    -fx-background-color: #50416a;
+    -fx-background-radius: 4 4 4 4;
+}
+
+#anime-replay-button {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-background-color: 
+        #005F4C,
+        #0C967A;
+    -fx-background-insets: 0, 0 0 2 0;
+    -fx-background-radius: 4,4;
+    -fx-padding: 8 8 8 8;
+}
+
+#anime-replay-button:hover {
+    -fx-text-fill: #0C967A;
+    -fx-font-size: 12px;
+    -fx-background-color: 
+        #0C967A,
+        #79d2c0;
+    -fx-background-insets: 0, 0 0 2 0;
+    -fx-background-radius: 4,4;
+    -fx-padding: 8 8 8 8;
+}
+
+#anime-replay-button:pressed {
+    -fx-text-fill: #005F4C;
+    -fx-font-size: 12px;
+    -fx-background-color: 
+        #005F4C,
+        #0C967A;
+    -fx-background-insets: 0, 2 0 0 0;
+    -fx-background-radius: 4,4;
+    -fx-padding: 8 8 8 8;
+}
+
+#anime-key-original {
+    -fx-background-color: #50416a;
+    -fx-text-fill: white;
+    -fx-background-radius: 4 0 0 4;
+}
+
+#anime-key-new {
+    -fx-background-color: #0C967A;
+    -fx-text-fill: white;
+    -fx-background-radius: 0 0 0 0;
+}
+
+#anime-key-carry {
+    -fx-background-color: #1E8CBA;
+    -fx-text-fill: white;
+    -fx-background-radius: 0 4 4 0;
+}
+
+#original-value {
+    -fx-font-family: Monospaced;
+    -fx-font-size: 14;
+}
+
+#new-value {
+    -fx-font-family: Monospaced;
+    -fx-font-size: 14;
+}

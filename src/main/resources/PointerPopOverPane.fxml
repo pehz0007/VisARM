@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root minWidth="300.0" stylesheets="@visual/popover.css" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button id="close-button" fx:id="btnClose" mnemonicParsing="false" onAction="#btnCloseFired" text="Close">
+         <VBox.margin>
+            <Insets left="4.0" />
+         </VBox.margin>
+      </Button>
+      <Label id="pointer-info-normal" minWidth="272.0" stylesheets="@visual/popover.css" text="Pointer Information:">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="8.0" />
+         </VBox.margin>
+      </Label>
+      <VBox id="pointer-info-background" minWidth="272.0" stylesheets="@visual/popover.css">
+         <children>
+            <HBox prefWidth="200.0">
+               <children>
+                  <Label id="pointer-info-label" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Pointer Name: " HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label id="pointer-info-value" fx:id="lblPtrName" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="R15" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="24.0" layoutY="24.0" prefWidth="200.0">
+               <children>
+                  <Label id="pointer-info-label" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Base Address:" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label id="pointer-info-value" fx:id="lblBaseAdr" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="0xFFFFFFF" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="24.0" layoutY="110.0" prefWidth="200.0">
+               <children>
+                  <Label id="pointer-info-label" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Offset:" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label id="pointer-info-value" fx:id="lblOffset" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="0xFFFFFFFF" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="24.0" layoutY="138.0" prefWidth="200.0">
+               <children>
+                  <Label id="pointer-info-label" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Base + Offset:" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label id="pointer-info-value" fx:id="lblActualAdr" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="0xFFFFFFFF" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="24.0" layoutY="153.0" prefWidth="200.0">
+               <children>
+                  <Label id="pointer-info-label" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Data value used:" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+                  <Label id="pointer-info-value" fx:id="lblCurrentValue" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="0xFFFFFFFF" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox id="pointer-info-index-hbox" fx:id="hbIndexing" disable="true" layoutX="24.0" layoutY="150.0" prefWidth="200.0" stylesheets="@visual/popover.css">
+               <children>
+                  <Label id="pointer-info-index-label" fx:id="lblIndexing" maxWidth="1.7976931348623157E308" stylesheets="@visual/popover.css" text="Pre/post index increment disabled" wrapText="true" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="14.0" left="14.0" right="14.0" top="8.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="8.0" />
+         </VBox.margin>
+      </VBox>
+      <Label id="pointer-info-normal" maxWidth="272.0" minWidth="272.0" stylesheets="@visual/popover.css" text="Instruction Summary:">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </Label>
+      <TextFlow fx:id="tfSummary" maxWidth="272.0" minWidth="272.0">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </TextFlow>
+   </children>
+   <padding>
+      <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+   </padding>
+</fx:root>

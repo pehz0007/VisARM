@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.collections.*?>
+<?import visual.*?>
+
+<fx:root maxHeight="1.7976931348623157E308" prefWidth="438.0" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+   <children>
+      <Label fx:id="lblTitle" maxWidth="1.7976931348623157E308" text="The following memory locations will be logged each time the system state is logged." wrapText="true" VBox.vgrow="ALWAYS">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="4.0" />
+         </VBox.margin>
+      </Label>
+      <HBox>
+         <children>
+            <ListView fx:id="lstMemCustom" editable="true" prefHeight="100.0" HBox.hgrow="ALWAYS" />
+            <VBox>
+               <children>
+                  <Button fx:id="btnAddMemCustom" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnAddMemCustomFired" text="Add Location" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </HBox.margin>
+                     <VBox.margin>
+                        <Insets bottom="8.0" left="4.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnRemoveMemCustom" layoutX="18.0" layoutY="22.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnRemoveMemCustomFired" text="Remove Selected" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </HBox.margin>
+                     <VBox.margin>
+                        <Insets bottom="8.0" left="4.0" top="4.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnRemoveAllMemCustom" layoutX="193.0" layoutY="22.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnRemoveAllMemCustomFired" text="Remove All" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </HBox.margin>
+                     <VBox.margin>
+                        <Insets bottom="8.0" left="4.0" top="4.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnCloseMemCustom" layoutX="285.0" layoutY="22.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnCloseMemCustomFired" text="Close" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </HBox.margin>
+                     <VBox.margin>
+                        <Insets left="4.0" top="4.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets left="8.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </HBox>
+   </children>
+</fx:root>

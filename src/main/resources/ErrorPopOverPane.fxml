@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.collections.*?>
+<?import visual.*?>
+
+<fx:root stylesheets="@visual/popover.css" type="VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+   <children>
+      <Label id="error-syntax" fx:id="lblTitle" maxWidth="1.7976931348623157E308" text="Title">
+         <padding>
+            <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="4.0" />
+         </VBox.margin>
+      </Label>
+      <Label id="error-message" fx:id="lblMessage" prefWidth="315.0" text="Error message goes here. If it is too long to fit in size then the size of the box will be increased." wrapText="true">
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblDetails" prefWidth="315.0" text="Detailed message with correction suggestions will be added here in the next deliverable. If it is too long to fit in size then the size of the box will be increased." wrapText="true">
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </padding>
+      </Label>
+   </children>
+</fx:root>

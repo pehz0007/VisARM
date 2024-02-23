@@ -1,0 +1,37 @@
+.background {
+    -fx-background-color: #484847;
+}
+
+.label {
+    -fx-font-size: 10pt;
+    -fx-font-weight: normal;
+    -fx-text-fill: #A4A4A4;
+    -fx-opacity: 1.0;
+}
+
+#regpane-label {
+    -fx-font-size: 10pt;
+    -fx-font-weight: normal;
+    -fx-text-fill: #A4A4A4;
+    -fx-opacity: 1.0;
+    -fx-background-color: #484847;
+}
+
+#regpane-vbox {
+    -fx-background-color: #484847;
+    -fx-background-radius: 4;
+}
+
+#regpane-table {
+    -fx-base: #484847;
+    -fx-control-inner-background: #484847;
+    -fx-background-color: #484847;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 0;
+}
+
+#regpane-table .table-column {
+    -fx-alignment: CENTER;
+    -fx-font-family: Monospaced;
+}

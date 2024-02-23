@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.collections.*?>
+<?import visual.*?>
+
+<fx:root maxHeight="208.0" maxWidth="-Infinity" minHeight="208.0" minWidth="-Infinity" prefHeight="208.0" prefWidth="400.0" stylesheets="@visual/popover.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefWidth="400.0" stylesheets="@visual/popover.css" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
+         <children>
+            <TableView fx:id="tableErrors" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Line">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="lineNumber" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn maxWidth="280.0" minWidth="280.0" prefWidth="280.0" sortable="false" text="Error">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="errorMessage" />
+                    </cellValueFactory>
+                </TableColumn>
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</fx:root>

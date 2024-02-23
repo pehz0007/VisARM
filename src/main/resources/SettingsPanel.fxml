@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" stylesheets="@visual/interface.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TabPane prefHeight="450.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="General">
+                  <content>
+                    <AnchorPane>
+                           <children>
+                              <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox layoutX="18.0" layoutY="18.0">
+                                       <children>
+                                          <Label fx:id="lblDefaultDirectory" prefHeight="32.0" prefWidth="187.0" text="Default working directory:" HBox.hgrow="NEVER">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="txtDefaultDirectory" onAction="#txtDefaultDirectoryChanged" text="/Users/salmanarif/Documents/_Coursework/fyp/VisUAL" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Button fx:id="btnBrowseDirectory" mnemonicParsing="false" onAction="#btnBrowseDirectoryFired" text="Browse" HBox.hgrow="NEVER">
+                                             <HBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label fx:id="lblRegFormat" text="Default register value format:" HBox.hgrow="NEVER">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                          <ChoiceBox fx:id="choiceRegFormat" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </HBox.margin>
+                                             <items>
+                                                <FXCollections fx:factory="observableArrayList">
+                                                   <String fx:value="Decimal" />
+                                                   <String fx:value="Binary" />
+                                                   <String fx:value="Hexadecimal" />
+                                                </FXCollections>
+                                             </items>
+                                             <value>
+                                                <String fx:value="Decimal" />
+                                             </value>
+                                          </ChoiceBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="18.0" layoutY="52.0">
+                                       <children>
+                                          <Label fx:id="lblTheme" prefHeight="32.0" prefWidth="187.0" text="* Code editor theme:" HBox.hgrow="NEVER">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                          <ChoiceBox fx:id="choiceTheme" maxWidth="1.7976931348623157E308" value="Decimal" HBox.hgrow="ALWAYS">
+                                             <items>
+                                                <FXCollections fx:factory="observableArrayList">
+                                                   <String fx:value="Dark" />
+                                                   <String fx:value="Light" />
+                                                   <String fx:value="Solarized Dark" />
+                                                    <String fx:value="Solarized Light" />
+                                                </FXCollections>
+                                             </items>
+                                             <value>
+                                                <String fx:value="Dark" />
+                                             </value>
+                                             <HBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </HBox.margin>
+                                          </ChoiceBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="18.0" layoutY="52.0">
+                                       <children>
+                                          <Label fx:id="lblFontSize" maxWidth="1.7976931348623157E308" text="* Code editor font size:" HBox.hgrow="ALWAYS">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="txtFontSize" alignment="CENTER_RIGHT" onAction="#txtFontSizeChanged" prefWidth="45.0" text="999" HBox.hgrow="NEVER">
+                                             <HBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Button fx:id="btnRestoreFont" layoutX="408.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnRestoreFontFired" text="Restore Default" HBox.hgrow="NEVER">
+                                             <HBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="18.0" layoutY="120.0">
+                                       <children>
+                                          <CheckBox fx:id="checkAutoIndentCode" mnemonicParsing="false" onAction="#checkAutoIndentCodeFired" selected="true" text="Auto-indent code before starting emulation">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </CheckBox>
+                                       </children>
+                                    </HBox>
+                                    <Separator prefWidth="200.0">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                    </Separator>
+                                    <HBox layoutX="18.0" layoutY="120.0">
+                                       <children>
+                                          <Label fx:id="lblLoopThreshold" maxWidth="1.7976931348623157E308" text="Number of loop iterations before alert issued:" HBox.hgrow="ALWAYS">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="txtLoopThreshold" alignment="CENTER_RIGHT" onAction="#txtLoopThresholdChanged" prefWidth="120.0" text="1000" HBox.hgrow="NEVER">
+                                             <HBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="18.0" layoutY="207.0">
+                                       <children>
+                                          <Label fx:id="lblStackPointerValue" maxWidth="1.7976931348623157E308" text="* Stack pointer initial value (minimum 0xFFFF):" HBox.hgrow="ALWAYS">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="txtStackPointerValue" alignment="CENTER_RIGHT" onAction="#txtStackPointerValueChanged" prefWidth="120.0" text="0x" HBox.hgrow="NEVER">
+                                             <HBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="18.0" layoutY="154.0">
+                                       <children>
+                                          <Label fx:id="lblMemInitValue" maxWidth="1.7976931348623157E308" text="Memory initialisation value:" HBox.hgrow="ALWAYS">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="txtMemInitValue" alignment="CENTER_RIGHT" onAction="#txtMemInitValueChanged" prefWidth="120.0" text="0x" HBox.hgrow="NEVER">
+                                             <HBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="18.0" layoutY="188.0">
+                                       <children>
+                                          <Label fx:id="lblInstMemSize" maxWidth="1.7976931348623157E308" text="* Instruction memory size:" HBox.hgrow="ALWAYS">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                          <CheckBox fx:id="checkAutoInstSize" mnemonicParsing="false" onAction="#checkAutoInstSizeFired" selected="true" text="Auto">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </CheckBox>
+                                          <Label fx:id="lblMaxProgSize" alignment="CENTER_RIGHT" disable="true" text="67108864 lines">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="txtInstMemSize" alignment="CENTER_RIGHT" disable="true" onAction="#txtInstMemSizeChanged" prefHeight="26.0" prefWidth="120.0" text="0x10000000">
+                                             <HBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <CheckBox fx:id="checkMemAccessMode" mnemonicParsing="false" onAction="#checkMemAccessModeFired" text="* Restrict memory write access to pre-defined addresses only">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </CheckBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="18.0" layoutY="207.0">
+                                       <children>
+                                          <Label fx:id="lblCycleModel" prefWidth="187.0" text="* Instruction cycle model:" HBox.hgrow="ALWAYS">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                          <CheckBox fx:id="checkDefaultCycleModel" mnemonicParsing="false" onAction="#checkDefaultCycleModelFired" selected="true" text="Use default">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </CheckBox>
+                                          <TextField fx:id="txtCycleModel" alignment="CENTER_RIGHT" disable="true" onAction="#txtCycleModelChanged" prefWidth="120.0" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Button fx:id="btnBrowseCycleModel" disable="true" mnemonicParsing="false" onAction="#btnBrowseCycleModelFired" text="Browse">
+                                             <HBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Visualisations">
+                  <content>
+                    <AnchorPane prefHeight="183.0">
+                           <children>
+                              <VBox prefHeight="192.0" prefWidth="500.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label text="To hide the buttons to show visualisations during execution, untick the relevant checkboxes below. Visualisations can always be shown using keyboard shortcuts." wrapText="true" VBox.vgrow="ALWAYS">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                    </Label>
+                                    <HBox>
+                                       <children>
+                                          <CheckBox fx:id="checkPointerInfo" mnemonicParsing="false" onAction="#checkPointerInfoFired" text="Pointer information">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </CheckBox>
+                                          <Label fx:id="lblPointerShortcut" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Ctrl+Alt+P" HBox.hgrow="ALWAYS">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="18.0" layoutY="82.0">
+                                       <children>
+                                          <CheckBox fx:id="checkShiftOps" mnemonicParsing="false" onAction="#checkShiftOpsFired" text="Shift operation animations">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </CheckBox>
+                                          <Label fx:id="lblShiftShortcut" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Ctrl+Alt+S" HBox.hgrow="ALWAYS">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="18.0" layoutY="116.0">
+                                       <children>
+                                          <CheckBox fx:id="checkMemoryAccess" mnemonicParsing="false" onAction="#checkMemoryAccessFired" text="Memory access visualisation">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </CheckBox>
+                                          <Label fx:id="lblMemoryShortcut" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Ctrl+Alt+M" HBox.hgrow="ALWAYS">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="18.0" layoutY="150.0">
+                                       <children>
+                                          <CheckBox fx:id="checkStackVis" mnemonicParsing="false" onAction="#checkStackVisFired" text="Stack visualisation">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </CheckBox>
+                                          <Label fx:id="lblStackShortcut" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Ctrl+Alt+K" HBox.hgrow="ALWAYS">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="18.0" layoutY="168.0">
+                                       <children>
+                                          <CheckBox fx:id="checkBranchVis" mnemonicParsing="false" onAction="#checkBranchVisFired" text="Branch information visualisation">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </CheckBox>
+                                          <Label fx:id="lblBranchShortcut" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Ctrl+Alt+B" HBox.hgrow="ALWAYS">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <Separator prefWidth="200.0">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                    </Separator>
+                                    <CheckBox fx:id="checkSkipFexec" mnemonicParsing="false" onAction="#checkSkipFexecFired" text="Skip false executed instructions">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                    </CheckBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Logging">
+                    <content>
+                      <AnchorPane>
+                           <children>
+                              <VBox prefWidth="600.0">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <CheckBox fx:id="checkEnableLogging" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#checkEnableLoggingFired" text="Enable logging" HBox.hgrow="ALWAYS">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </CheckBox>
+                                          <Hyperlink fx:id="hlinkLoggingGuide" onAction="#hlinkLoggingGuideFired" text="Logging Guide">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Hyperlink>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="18.0" layoutY="18.0">
+                                       <children>
+                                          <Label fx:id="lblMode" disable="true" maxWidth="1.7976931348623157E308" text="Mode:" HBox.hgrow="ALWAYS">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                          <RadioButton fx:id="rdioAll" disable="true" mnemonicParsing="false" onAction="#rdioAllFired" selected="true" text="All instructions">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </RadioButton>
+                                          <RadioButton fx:id="rdioCompletion" disable="true" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#rdioCompletionFired" text="Upon completion">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </RadioButton>
+                                          <RadioButton fx:id="rdioBreakpoints" disable="true" layoutX="149.0" layoutY="10.0" mnemonicParsing="false" onAction="#rdioBreakpointsFired" text="Breakpoints only">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </RadioButton>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="18.0" layoutY="52.0">
+                                       <children>
+                                          <Label fx:id="lblLogFile" disable="true" text="Log file location:" HBox.hgrow="NEVER">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                          <TextField fx:id="txtLogFile" disable="true" onAction="#txtLogFileChanged" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <Button fx:id="btnLogFile" disable="true" mnemonicParsing="false" onAction="#btnLogFileFired" text="Browse">
+                                             <HBox.margin>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="18.0" layoutY="52.0">
+                                       <children>
+                                          <Label fx:id="lblItemsToLog" disable="true" text="Items to log:" HBox.hgrow="NEVER">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <GridPane maxWidth="1.7976931348623157E308" vgap="4.0" VBox.vgrow="ALWAYS">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="310.0" minWidth="10.0" prefWidth="266.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="10.0" prefWidth="266.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <CheckBox fx:id="checkRegValues" disable="true" mnemonicParsing="false" onAction="#checkRegistersFired" selected="true" text="Register values">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </CheckBox>
+                                          <CheckBox fx:id="checkStatusBits" disable="true" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#checkStatusBitsFired" selected="true" text="Status bits" GridPane.columnIndex="1">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </CheckBox>
+                                          <CheckBox fx:id="checkSyntaxErrors" disable="true" layoutX="256.0" layoutY="10.0" mnemonicParsing="false" onAction="#checkSyntaxErrorsFired" selected="true" text="Syntax errors" GridPane.rowIndex="1">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                          </CheckBox>
+                                          <CheckBox fx:id="checkRuntimeErrors" disable="true" layoutX="10.0" layoutY="35.0" mnemonicParsing="false" onAction="#checkRuntimeErrorsFired" selected="true" text="Runtime errors" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </CheckBox>
+                                          <CheckBox fx:id="checkMemChanged" disable="true" layoutX="252.0" layoutY="42.0" mnemonicParsing="false" onAction="#checkMemChangedFired" selected="true" text="Changed memory words" GridPane.rowIndex="2">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </CheckBox>
+                                          <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <children>
+                                                <CheckBox fx:id="checkMemCustom" disable="true" layoutX="10.0" layoutY="76.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#checkMemCustomFired" text="Custom memory locations" GridPane.columnIndex="1" GridPane.rowIndex="2" HBox.hgrow="ALWAYS">
+                                                   <padding>
+                                                      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                                   </padding>
+                                                </CheckBox>
+                                                <Button fx:id="btnMemCustom" disable="true" mnemonicParsing="false" onAction="#btnMemCustomFired" text="Choose">
+                                                   <HBox.margin>
+                                                      <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <CheckBox fx:id="checkCycleCount" disable="true" mnemonicParsing="false" onAction="#checkCycleCountFired" selected="true" text="Current instruction cycle count" GridPane.rowIndex="3">
+                                             <padding>
+                                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                             </padding>
+                                          </CheckBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </GridPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <VBox HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="390.0" text="* Requires application restart for changes to take effect." wrapText="true" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="390.0" text="Settings in bold have been changed from their default values." wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Button fx:id="btnResetAll" mnemonicParsing="false" onAction="#btnResetAllFired" text="* Reset All" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </VBox.margin>
+                     <HBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" />
+               </padding>
+            </HBox>
+            <Label fx:id="lblChangesSaved" text="Changes saved" textFill="#3ba1b8">
+               <padding>
+                  <Insets bottom="16.0" left="16.0" right="16.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</fx:root>

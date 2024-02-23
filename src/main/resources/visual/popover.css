@@ -1,0 +1,297 @@
+#pointer-info-label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-family: System;
+    -fx-background-color: #4f4069;
+}
+
+#pointer-info-background {
+    -fx-background-color: #4f4069;
+    -fx-background-radius: 10;
+}
+
+#pointer-info-value {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-family: Monospaced;
+    -fx-background-color: #4f4069;
+}
+
+#pointer-info-normal {
+    -fx-font-size: 14px;
+    -fx-font-family: System;
+    -fx-font-family: default;
+}
+
+#pointer-info-index-hbox {
+    -fx-background-color: #c3b26c;
+    -fx-background-radius: 4;
+}
+
+#pointer-info-index-hbox:disabled {
+    -fx-background-color: #372c49;
+}
+
+#pointer-info-index-label {
+    -fx-background-color: transparent;
+    -fx-text-fill: #4f4069;
+    -fx-font-size: 14px;
+    -fx-font-family: System;
+}
+
+#pointer-info-index-label:disabled {
+    -fx-background-color: transparent;
+    -fx-text-fill: #715d95;
+    -fx-font-size: 14px;
+    -fx-font-family: System;
+}
+
+#stack-info-label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-family: System;
+    -fx-background-color: #03898E;
+}
+
+#stack-info-summary {
+    -fx-text-fill: white;
+    -fx-font-family: System;
+    -fx-background-color: #03898E;
+}
+
+#stack-info-normal {
+    -fx-font-size: 14px;
+    -fx-font-family: System;
+    -fx-font-family: default;
+}
+
+#stack-info-value {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-family: Monospaced;
+    -fx-background-color: #03898E;
+}
+
+#stack-info-background {
+    -fx-background-color: #03898E;
+    -fx-background-radius: 10;
+}
+
+#stack-info-writeback-hbox {
+    -fx-background-color: #F7E1A0;
+    -fx-background-radius: 4;
+}
+
+#stack-info-writeback-hbox:disabled {
+    -fx-background-color: #115356;
+}
+
+#stack-info-writeback-label {
+    -fx-background-color: transparent;
+    -fx-text-fill: #03898E;
+    -fx-font-size: 14px;
+    -fx-font-family: System;
+}
+
+#stack-entry-hbox {
+    -fx-font-family: Monospaced;
+    -fx-font-size: 14px;
+}
+
+#stack-entry-hbox-before {
+    -fx-font-family: Monospaced;
+    -fx-font-size: 14px;
+    -fx-background-color: #99d9c7;
+}
+
+#stack-entry-hbox-after {
+    -fx-font-family: Monospaced;
+    -fx-font-size: 14px;
+    -fx-background-color: #f5e39c;
+}
+
+#branch-info-background {
+    -fx-background-color: #e8e8e8;
+    -fx-background-radius: 4;
+}
+
+#branch-info-label {
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-font-family: System;
+}
+
+#branch-info-value {
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-font-family: Monospaced;
+}
+
+#summary-normal {
+    -fx-font-family: System;
+    -fx-font-size: 14px;
+}
+
+#summary-code {
+    -fx-font-size: 14px;
+    -fx-font-family: Monospaced;
+}
+
+#memory-key-base {
+    -fx-background-color: #99d9c7;
+    -fx-background-radius: 4 0 0 4;
+}
+
+#memory-key-actual {
+    -fx-background-color: #f5e39c;
+    -fx-background-radius: 0 4 4 0;
+}
+
+#memory-mode-read-on {
+    -fx-background-color: #2ca4d6;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 4 0 0 4;
+    -fx-font-family: System;
+}
+
+#memory-mode-read-off {
+    -fx-background-color: #6d6f6a;
+    -fx-text-fill: #91948d;
+    -fx-background-radius: 4 0 0 4;
+    -fx-font-family: System;
+}
+
+#memory-mode-write-on {
+    -fx-background-color: #2ca4d6;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 0 4 4 0;
+    -fx-font-family: System;
+}
+
+#memory-mode-write-off {
+    -fx-background-color: #6d6f6a;
+    -fx-text-fill: #91948d;
+    -fx-background-radius: 0 4 4 0;
+    -fx-font-family: System;
+}
+
+#memory-byte-address-title {
+    -fx-font-weight: bold;
+}
+
+#memory-data-hbox-normal {
+    -fx-font-family: Monospaced;
+    -fx-font-size: 14px;
+}
+
+#memory-data-hbox-base {
+    -fx-font-family: Monospaced;
+    -fx-font-size: 14px;
+    -fx-background-color: #99d9c7;
+}
+
+#memory-data-hbox-actual {
+    -fx-font-family: Monospaced;
+    -fx-font-size: 14px;
+    -fx-background-color: #f5e39c;
+}
+
+#memory-data-hbox-byte-base {
+    -fx-background-color: #99d9c7;
+    -fx-background-radius: 4;
+    -fx-background-insets: 2;
+}
+
+#memory-data-hbox-byte-actual {
+    -fx-background-color: #f5e39c;
+    -fx-background-radius: 4;
+    -fx-background-insets: 2;
+}
+
+#error-syntax {
+    -fx-font-weight: bold;
+    -fx-background-color: #de0500;
+    -fx-background-radius: 4;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: System;
+}
+
+#error-runtime {
+    -fx-font-weight: bold;
+    -fx-background-color: #eb7e13;
+    -fx-background-radius: 4;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: System;
+}
+
+#error-message {
+    -fx-font-weight: bold;
+    -fx-font-family: System;
+}
+
+#tooltip-root {
+    -fx-background-color: 
+        #D5CD6F,
+        #F8F3BB;
+    -fx-background-insets: 0, 2;
+    -fx-font-family: Monospaced;
+}
+
+#tooltip-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-text-fill: #04008E;
+}
+
+#tooltip-details {
+    -fx-font-size: 13px;
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+
+#tooltip-scrollpane {
+    -fx-background-color: transparent;
+}
+
+#tooltip-closeinfo {
+    -fx-font-size: 11px;
+    -fx-font-family: System;
+}
+
+#close-button {
+    -fx-background-color:
+        #ab0000,
+        #dc4040;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-text-fill: #ffffff;
+}
+
+#scroll-button {
+    -fx-background-color:
+        #3b78a7,
+        #4893cd;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-text-fill: #ffffff;
+}
+
+#monospace-text {
+    -fx-font-family: Monospaced;
+}
+
+#instruction-memory-key {
+    -fx-background-color: #f5e39c;
+    -fx-background-radius: 4 0 0 4;
+}
+
+#data-memory-key {
+    -fx-background-color: #0C967A;
+    -fx-background-radius: 0 4 4 0;
+    -fx-text-fill: white;
+}
+
+#memory-table .table-column {
+    -fx-alignment: CENTER;
+    -fx-font-family: Monospaced;
+}

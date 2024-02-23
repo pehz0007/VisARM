@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" stylesheets="@visual/interface.css" type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="imgClockIcon" fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/clock_56px.png" />
+         </image>
+         <HBox.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </HBox.margin>
+      </ImageView>
+      <Label maxWidth="1.7976931348623157E308" text="Clock Cycles" HBox.hgrow="ALWAYS">
+         <HBox.margin>
+            <Insets left="4.0" />
+         </HBox.margin>
+      </Label>
+      <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Current Instruction:" HBox.hgrow="NEVER">
+         <HBox.margin>
+            <Insets left="4.0" />
+         </HBox.margin>
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblCurrentCycles" layoutX="44.0" layoutY="10.0" text="0">
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </padding>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="167.0" layoutY="10.0" maxWidth="1.7976931348623157E308" text="Total:" HBox.hgrow="NEVER">
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblTotalCycles" layoutX="44.0" layoutY="10.0" text="0">
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </padding>
+      </Label>
+   </children>
+</fx:root>

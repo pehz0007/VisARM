@@ -1,0 +1,19 @@
+.background {
+}
+
+.label {
+}
+
+#regpane-label {
+}
+
+#regpane-vbox {
+}
+
+#regpane-table {
+}
+
+#regpane-table .table-column {
+    -fx-alignment: CENTER;
+    -fx-font-family: Monospaced;
+}
